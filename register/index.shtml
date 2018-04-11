@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="快酷英语,在线英语,QQEnglish,凯伦方法" />
+<meta name="description" content="在线外教一对一，所有老师拥有TESOL对外英语教学证书。注册即可免费体验！" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />   
+<link rel="stylesheet" type="text/css" href="/css/staticcommon/import.css" />
+<link rel="stylesheet" type="text/css" href="/css/studentsadd/index.css" />
+<link rel="stylesheet" type="text/css" href="/css/studentsadd/register.css" />
+<script type="text/javascript" src="/js/staticcommon/jQuery.js"></script>
+<script type="text/javascript" src="/js/studentsadd/register.v20130111.js"></script>
+<style type="text/css">
+#img_code {
+	cursor: pointer;
+}
+.reg{
+    height: 400px;
+}
+
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){
+	  
+	   $("#StudentValidatecode").focus(function(){
+		   $.get("check_code.php?t=" + Math.random(),function(data){
+				  $("#validateRepCode").val(data);
+			  });
+		});
+	  
+	  $("#StudentValidatecode").click(function(){
+		  $.get("check_code.php?t=" + Math.random(),function(data){
+			  $("#validateRepCode").val(data);
+		  });
+		  
+	  });
+	  
+	  $("#img_code").click(function(){
+		  this.src = "get_random_code.php?t=" + Math.random();
+		  $.get("check_code.php?t=" + Math.random(),function(data){
+			  $("#validateRepCode").val(data);
+		  });
+	  });
+	    
+  });
+</script>
+
+<title>新学员注册 - 快酷英语-在线外教一对一</title>
+</head>
+<body id="" class="before">
+<!--header:Begin-->
+<div class="head">
+  <!--#include virtual="/elements/header.shtml"-->
+</div>
+<!--header:End-->
+<!--content：Begin-->
+<div id="content">
+  <div class="warapper">
+<!--main-->
+<div class="page-register">
+	<ul class="c-guide c-guide-3steps">
+		<li class="c-guide-step1 c-guide-current"><span>第一步：填写帐号信息</span></li>
+		<li class="c-guide-step2 c-guide-unfinished"><span>第二步：验证帐号信息</span></li>
+		<li class="c-guide-step3 c-guide-unfinished"><span>第三步：预约课程</span></li>
+	</ul>
+</div>
+<!--main-->
+
+<div id="main02" class="mTop15">
+<div class="CFix">
+	<!--leftArea:Begin-->
+	<div id="leftArea">
+        <div class="regAreaWar">
+        <form name="regform" id="regform" method="post" action="http://cn.kuaikuenglish.com/students/register/" accept-charset="utf-8">
+        <input type="hidden" name="data[Student][mode]" value="exec" id="StudentMode" />    
+        <ul class="reg clear" id="reg"> 
+            <li class="regEmailArea">
+                <div id="inputEmailWar" class="inputArea">
+                    <label for="StudentFEmail" style="float:left;">登陆账号：</label>
+                    <input autocomplete="off" placeholder="邮箱账号" name="data[Student][f_email]" id="StudentFEmail" type="text" class="sohuField" maxlength="64"/>
+                </div>
+                
+            </li>
+            <li>
+                <div class="inputArea">
+                    <label for="StudentFPassword">登录密码：</label>
+                    <input type="password" name="data[Student][f_password]" class="sohuField" maxlength="15" id="StudentFPassword" />
+                </div>
+                <div class="psArea">
+                <span></span>密码强度：<div class="ptp week"></div><em class="ptt">弱</em>
+                <div class="tip"></div>
+                </div>
+            </li>
+            <li>
+                <div class="inputArea">
+                    <label for="StudentFPasswordConf">密码确认：</label>
+                    <input  type="password" name="data[Student][f_password_conf]" class="sohuField" maxlength="15"  id="StudentFPasswordConf" />            
+                </div>
+            </li>
+            <li>
+                <div class="inputArea">
+                    <label for="StudentValidatecode">验证码：</label>
+                    <input  type="text" name="data[Student][validatecode]" style="width:130px;margin-right: 15px;" class="sohuField" maxlength="3"  id="StudentValidatecode" />            
+                    <img id="img_code" alt="点击刷新" width="130" height="42" title="点击刷新" src="get_random_code.php" />
+                    <input type="hidden" name="data[Student][validate_rep_code]" id="validateRepCode" value=""/>
+                </div>
+            </li>
+            <li style="border-bottom:1px dotted #CCC;">
+                 <div  class="checkAreaWar">
+                    <label for="agree">
+                        <input type="checkbox" id="agree" name="agree" checked="checked"/>我已阅读并接受  
+						<a target="black" href="/static/agreement/index.shtml">服务协议</a> 
+                    </label>
+                </div>
+                <div id="agreeTip" class="tip error"><span class="icon"></span>需要先同意《快酷服务协议》才能继续注册！</div>  
+            </li>
+            <li style="height:15px;"></li>
+            <li>
+                <label for=""></label>
+                <input  type="submit"  class="btn-reg" value="注  册"/>
+            </li>
+        </ul>
+  
+        </form>        
+        </div>
+
+	</div>
+	<!--leftArea:End-->
+	
+	<!--rightArea-->
+	<div id="rightArea">
+		<div class="sideTp"></div>
+		<div class="sideIn">
+			<h4 class="text13 b center">免费注册到上课的流程</h4>
+			<script>
+			$(function(){
+				$('.box #boxCont').css('marginTop',-200);
+				$(window).load(function(){
+					$('.box #boxCont').animate({marginTop:0},{duration:1000,easing:'easeOutExpo'});
+				});
+			});
+			</script>
+			<div class="box currentStep01" style="height:410px;">
+				<div id="boxCont">
+					<dl class="step01 CFix">
+						<dt class="floatL">STEP1</dt>
+						<dd class="floatL">免费注册</dd>
+					</dl>
+					<dl class="step02 CFix">
+						<dt class="floatL">STEP2</dt>
+						<dd class="floatL">注册之后系统会向您注册的信箱发送确认邮件。点击邮件内的激活链接。</dd>
+					</dl>
+					<dl class="step03 CFix">
+						<dt class="floatL">STEP3</dt>
+						<dd class="floatL">在初次登陆页面输入注册的邮箱和密码登陆。</dd>
+					</dl>
+					<dl class="step04 CFix">
+						<dt class="floatL">STEP4</dt>
+						<dd class="floatL">预约免费体验课程。</dd>
+					</dl>
+					<dl class="step05 CFix">
+						<dt class="floatL">STEP5</dt>
+						<dd class="floatL">设定希望的日期和时间，点击“检索”。</dd>
+					</dl>
+					<dl class="step06 CFix">
+						<dt class="floatL">STEP6</dt>
+						<dd class="floatL">绿色的『OPEN』键是可以预约的时间段。点击您希望的时间段按键。</dd>
+					</dl>
+					<dl class="step07 CFix">
+						<dt class="floatL">STEP7</dt>
+						<dd class="floatL">最后点击预约键。</dd>
+					</dl>
+					<dl class="step08 CFix">
+						<dt class="floatL">STEP8</dt>
+						<dd class="floatL">再次确认预约内容后点击预约。</dd>
+					</dl>
+					<dl class="step09 CFix">
+						<dt class="floatL">STEP9</dt>
+						<dd class="floatL">预约后客服会加您的QQ或Skype好友，与您确认上课的时间及注意事项。</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	<div class="sideBm"></div>
+		
+	</div>
+	<!--rightArea:End-->
+
+	
+
+</div></div>
+
+	<!--main:End-->
+   </div>
+</div>
+<!--content:End-->
+<!-- footbg:Begin -->
+<div class="footbg">
+  <!--#include virtual="/elements/footer.shtml"-->
+</div>
+<!-- footbg:End -->
+
+
+<script type="text/javascript" src="/register/js/jquery.mailAutoComplete.js"></script>
+<link type="text/css" rel="stylesheet" href="/register/js/jquery.mailAutoComplete.css" />
+<script>
+	$("#StudentFEmail").mailAutoComplete();
+</script>
+</body>
+</html>
